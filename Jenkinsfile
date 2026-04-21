@@ -24,15 +24,15 @@ pipeline{
         stage('checkout'){
             steps{
                 checkout scmGit(
-                    branches: [[name: "*/${params.Branch}"]]
+                    branches: [[name: "*/${params.Branch}"]],
                     userRemoteConfigs: [[url: 'https://github.com/pratikzende882002-hash/Terraform-root-main.git']]
                 )
             }
         }
 
-    }
+    
 
-    stages{
+
         stage('Terraform Init'){
             steps{
                 sh """
