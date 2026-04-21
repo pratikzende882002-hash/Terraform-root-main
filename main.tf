@@ -39,7 +39,7 @@ module "subnet" {
     vpc_id = module.vpc.vpc_id
     cidr_block = each.value.cidr
     availability_zone = each.value.az
-    map_public_ip_on_launch = each.is_public
+    map_public_ip_on_launch = each.value.is_public
     tags = merge(local.common_tags, {SubnetType = each.value.is_public ? "public" : "private"})
 }
 
