@@ -10,8 +10,8 @@ tags = {
 }
 
 subnets = {
-    "public_subnet" = { cidr = "10.1.1.0/24", az = "ap-south-1a", is_public = true }
-    "private_subnet" = { cidr = "10.1.2.0/24", az = "ap-south-1a", is_public = false }
+    "public-subnet" = { cidr = "10.1.1.0/24", az = "ap-south-1a", is_public = true }
+    "private-subnet" = { cidr = "10.1.2.0/24", az = "ap-south-1a", is_public = false }
 }
 
 ec2_instances = {
