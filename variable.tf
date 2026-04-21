@@ -40,7 +40,7 @@ variable "subnets" {
 variable "ec2_instances" {
     description = "Map of EC2 instance configurations"
     type = map(object({
-        ami          = string
+        ami_id          = string
         instance_type = string
         subnet_key    = string
     }))
