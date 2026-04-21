@@ -66,7 +66,7 @@ module "ec2_instance" {
 
 module "s3_bucket" {
     source = "git::https://github.com/pratikzende882002-hash/Terraform-module-s3.git"
-    bucket_name = "${local.name_prefix}-bucket"
+    bucket_name = "${local.name_prefix}-bucket4234235"
     environment = var.environment
     tags = merge(local.common_tags, {Role = "storage"})
 
