@@ -52,7 +52,7 @@ module "ec2_instance" {
     
     for_each = var.ec2_instances 
     instance_name = "${local.name_prefix}-${each.key}"
-    ami_id = each.value.ami
+    ami_id = each.value.ami_id
     instance_type = each.value.instance_type
     subnet_id = module.subnet[each.value.subnet_key].subnet_id
     vpc_id = module.vpc.vpc_id
