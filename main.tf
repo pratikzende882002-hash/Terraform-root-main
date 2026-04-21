@@ -1,5 +1,5 @@
 provider "aws" {
-    region = ap-south-1
+    region = "ap-south-1"
   
 }
 
@@ -34,7 +34,7 @@ module "vpc" {
 module "subnet" {
     source = "git::https://github.com/pratikzende882002-hash/Terraform-module-subnet.git"
 
-    for_each = var.subnet
+    for_each = var.subnets
     subnet_name = "${local.name_prefix}-${each.key}"
     vpc_id = module.vpc.vpc_id
     cidr_block = each.value.cidr
