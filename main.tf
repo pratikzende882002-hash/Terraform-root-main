@@ -21,7 +21,7 @@ locals {
 #=====================================================================================================================================]
 
 module "vpc" {
-    source = "https://github.com/pratikzende882002-hash/Terraform-module-vpc.git"
+    source = "git::https://github.com/pratikzende882002-hash/Terraform-module-vpc.git"
     cidr_block = var.vpc_cidr
     name = "${local.name_prefix}-vpc"
     tags = local.common_tags
@@ -32,7 +32,7 @@ module "vpc" {
 #=====================================================================================================================================]
 
 module "subnet" {
-    source = "https://github.com/pratikzende882002-hash/Terraform-module-subnet.git"
+    source = "git::https://github.com/pratikzende882002-hash/Terraform-module-subnet.git"
 
     for_each = var.subnet
     subnet_name = "${local.name_prefix}-${each.key}"
@@ -48,7 +48,7 @@ module "subnet" {
 #=====================================================================================================================================]
 
 module "ec2_instance" {
-    source = "https://github.com/pratikzende882002-hash/Terraform-module-ec2.git"
+    source = "git::https://github.com/pratikzende882002-hash/Terraform-module-ec2.git"
     
     for_each = var.ec2_instances 
     instance_name = "${local.name_prefix}-${each.key}"
@@ -65,7 +65,7 @@ module "ec2_instance" {
 #=====================================================================================================================================]
 
 module "s3_bucket" {
-    source = "https://github.com/pratikzende882002-hash/Terraform-module-s3.git"
+    source = "git::https://github.com/pratikzende882002-hash/Terraform-module-s3.git"
     bucket_name = "${local.name_prefix}-bucket"
     environment = var.environment
     tags = merge(local.common_tags, {Role = "storage"})
