@@ -23,7 +23,7 @@ locals {
 module "vpc" {
     source = "git::https://github.com/pratikzende882002-hash/Terraform-module-vpc.git"
     cidr_block = var.vpc_cidr
-    name = "${local.name_prefix}-vpc"
+    vpc_name = "${local.name_prefix}-vpc"
     tags = local.common_tags
 }
 
